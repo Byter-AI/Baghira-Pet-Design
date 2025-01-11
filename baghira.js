@@ -1,3 +1,49 @@
+// Función para el menú móvil
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.menu-toggle');
+    
+    if (navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+    } else {
+        navLinks.classList.add('active');
+        menuToggle.classList.add('active');
+    }
+}
+
+// Función para establecer el tema (el resto del código del tema permanece igual)
+function setTheme(theme) {
+    // ... (código existente del tema)
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Configuración del menú móvil
+    const menuToggle = document.querySelector('.menu-toggle');
+    menuToggle.addEventListener('click', toggleMobileMenu);
+
+    // Cerrar el menú al hacer clic en un enlace
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const mobileMenu = document.querySelector('.nav-links');
+            if (mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+    });
+
+    // Código existente del tema
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+    
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('change', toggleTheme);
+    
+    document.documentElement.style.transition = 'all 0.3s ease-in-out';
+});
+
+// El resto del código existente permanece igual
 // Función para establecer el tema
 function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
