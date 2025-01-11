@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Fondo suave -->
+  <circle cx="200" cy="150" r="120" fill="#f8f8f8" opacity="0.3"/>
+  
+  <!-- Forma base del corazón estilizado -->
+  <path d="M200 180
+           C160 140 130 140 130 170
+           C130 200 160 210 200 240
+           C240 210 270 200 270 170
+           C270 140 240 140 200 180"
+        fill="none"
+        stroke="#4A4A4A"
+        stroke-width="3"
+        fill-rule="evenodd"/>
+  
+  <!-- Curvas que sugieren movimiento y comodidad -->
+  <path d="M140 160
+           C180 160 220 160 260 160"
+        fill="none"
+        stroke="#D2B48C"
+        stroke-width="12"
+        stroke-linecap="round"
+        opacity="0.6"/>
+  
+  <path d="M150 140
+           C190 140 210 140 250 140"
+        fill="none"
+        stroke="#D2B48C"
+        stroke-width="8"
+        stroke-linecap="round"
+        opacity="0.4"/>
+        
+  <!-- Huella abstracta integrada -->
+  <circle cx="200" cy="150" r="8" fill="#4A4A4A" opacity="0.8"/>
+  <circle cx="220" cy="140" r="6" fill="#4A4A4A" opacity="0.6"/>
+  <circle cx="180" cy="140" r="6" fill="#4A4A4A" opacity="0.6"/>
+  
+  <!-- Elemento circular que sugiere protección/hogar -->
+  <path d="M150 180
+           A60 60 0 0 1 250 180"
+        fill="none"
+        stroke="#4A4A4A"
+        stroke-width="3"
+        opacity="0.8"/>
+  
+  <!-- Texto "Baghira" -->
+  <text x="200" y="250" 
+        font-family="Montserrat, sans-serif" 
+        font-size="24" 
+        text-anchor="middle" 
+        fill="#4A4A4A" 
+        font-weight="bold">
+    BAGHIRA
+  </text>
+  
+  <!-- Texto "Pets" -->
+  <text x="200" y="270" 
+        font-family="Montserrat, sans-serif" 
+        font-size="16" 
+        text-anchor="middle" 
+        fill="#4A4A4A">
+    PETS
+  </text>
+</svg>
