@@ -1,153 +1,125 @@
-// Función para el menú móvil
-function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    const menuToggle = document.querySelector('.menu-toggle');
-    
-    if (navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        menuToggle.classList.remove('active');
-    } else {
-        navLinks.classList.add('active');
-        menuToggle.classList.add('active');
-    }
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baghira</title>
+    <link rel="stylesheet" href="baghira.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-header">
+                <div class="logo">Baghira Pet Design</div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#sobre-nosotros">Sobre Nosotros</a>
+                <a href="#contacto">Contacto</a>
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider">
+                        <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </nav>
+    <section class="hero" id="inicio">
+        <h1>Muebles y Rascadores para Gatos</h1>
+        <p>Diseños únicos para el confort de tu felino</p>
+    </section>
 
-// Función para establecer el tema (el resto del código del tema permanece igual)
-function setTheme(theme) {
-    // ... (código existente del tema)
-}
+    <section class="product-lines" id="catalogo">
+        <h2>Nuestras Líneas de Productos</h2>
+        <div class="line-container">
+            <div class="product-line">
+                <h3>Línea Hogar</h3>
+                <p>Descubre nuestra colección de rascadores elaborados con fibrofácil, perfectos para crear espacios acogedores para tu gato. Diseñados pensando en la durabilidad y el confort, estos rascadores combinan funcionalidad con un diseño que se integra perfectamente en cualquier hogar. Hechos con tapizmel e hilo sisal, cada rascador ha sido cuidado hasta el más mínimo detalle, siendo prácticos y muy resistentes. No suelen ser de gran peso, ya que están trabajados con madera de espesor entre 9 y 12 mm, dependiendo del tamaño. Además, ofrecemos un servicio de retapizado (con costo adicional), cuyo valor varía según las condiciones del mueble.</p>
+            </div>
+            <div class="product-line">
+                <h3>Línea Deco</h3>
+                <p>Explora nuestra exclusiva línea de rascadores en melamina, donde el diseño contemporáneo se encuentra con la funcionalidad. Cada pieza es una obra de arte moderna que no solo satisface las necesidades de tu gato, sino que también realza la estética de tu espacio. Esta línea presenta un concepto minimalista de rascadores sin tapizar, diseñados con melamina. La fina y elegante terminación de la madera no requiere un tapizado o tratamiento posterior del producto. Está diseñado apuntando más a lo estético que a lo práctico y suele ser mucho más pesado que la línea hogar, ya que el espesor de la madera es de 18 mm.</p>
+            </div>
+        </div>
+    </section>
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Configuración del menú móvil
-    const menuToggle = document.querySelector('.menu-toggle');
-    menuToggle.addEventListener('click', toggleMobileMenu);
+    <section class="categories">
+        <h2>Categorías de Productos</h2>
+        <div class="category-grid">
+            <a href="rascadores.html" class="category-card">
+                <div class="placeholder-img">
+                    <img src="rascador2.png" class="img-portada">
+                </div>
+                <h3>Rascadores</h3>
+                <p>Variedad de rascadores para todas las necesidades</p>
+            </a>
+            <a href="torres.html" class="category-card">
+                <div class="placeholder-img">
+                    <img src="torre1.png" class="img-portada2">
+                </div>
+                <h3>Torres</h3>
+                <p>Torres multi-nivel para máxima diversión</p>
+            </a>
+            <a href="muebles.html" class="category-card">
+                <div class="placeholder-img">
+                    <img src="mueble1.png" class="img-portada1">
+                </div>
+                <h3>Muebles</h3>
+                <p>Muebles elegantes y funcionales</p>
+            </a>
+            <a href="amurables.html" class="category-card">
+                <div class="placeholder-img">
+                    <img src="amurable1.jpg" class="img-portada3">
+                </div>
+                <h3>Amurables</h3>
+                <p>Rascadores de pared para aprovechar el espacio vertical</p>
+            </a>
+        </div>
+    </section>
 
-    // Cerrar el menú al hacer clic en un enlace
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            const mobileMenu = document.querySelector('.nav-links');
-            if (mobileMenu.classList.contains('active')) {
-                toggleMobileMenu();
-            }
-        });
-    });
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <p>Somos especialistas en crear espacios felinos que combinan diseño y funcionalidad. Cada producto está pensado para el disfrute de tu gato y la estética de tu hogar.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: info@catfurniture.com</p>
+                <p>Teléfono: (54) 387 277877</p>
+                <p>Dirección: Por el momento solo virtual</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/baghira13?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+                    <a href="https://www.facebook.com/Guaymss">Facebook</a>
+                    <a href="#">Tik Tok</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    // Código existente del tema
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-    
-    const toggle = document.getElementById('theme-toggle');
-    toggle.addEventListener('change', toggleTheme);
-    
-    document.documentElement.style.transition = 'all 0.3s ease-in-out';
-});
-
-// El resto del código existente permanece igual
-// Función para establecer el tema
-function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-   
-    // Actualizar el estado del toggle
-    const toggle = document.getElementById('theme-toggle');
-    toggle.checked = theme === 'dark';
-
-    // Actualizar los colores de fondo de los placeholder-img
-    const placeholderImages = document.querySelectorAll('.placeholder-img');
-    placeholderImages.forEach(img => {
-        // Usar el nuevo color #ac948a para el fondo de las imágenes
-        img.style.background = '#ac948a';
-    });
-
-    // Actualizar los estilos de las category-cards
-    const categoryCards = document.querySelectorAll('.category-card');
-    categoryCards.forEach(card => {
-        if (theme === 'dark') {
-            card.style.background = '#2a2a2a';
-            card.style.color = '#ffffff';
-        } else {
-            card.style.background = '';
-            card.style.color = '';
-        }
-    });
-
-    // Actualizar los estilos de los product-lines
-    const productLines = document.querySelectorAll('.product-line');
-    productLines.forEach(line => {
-        if (theme === 'dark') {
-            line.style.background = '#2a2a2a';
-            // Usar el color del título --accent-brown
-            line.style.color = '#a67c52';
-        } else {
-            line.style.background = '';
-            // Usar el color del título --accent-brown en modo claro también
-            line.style.color = '#a67c52';
-        }
-    });
-
-    // Actualizar los títulos h3 dentro de product-lines
-    const productTitles = document.querySelectorAll('.product-line h3');
-    productTitles.forEach(title => {
-        if (theme === 'dark') {
-            title.style.color = '#a67c52';
-        } else {
-            title.style.color = '';
-        }
-    });
-
-    // Actualizar los títulos h3 dentro de category-cards
-    const cardTitles = document.querySelectorAll('.category-card h3');
-    cardTitles.forEach(title => {
-        if (theme === 'dark') {
-            title.style.color = '#ffffff';
-        } else {
-            title.style.color = '';
-        }
-    });
-
-    // Actualizar los párrafos dentro de category-cards
-    const cardParagraphs = document.querySelectorAll('.category-card p');
-    cardParagraphs.forEach(p => {
-        if (theme === 'dark') {
-            p.style.color = '#cccccc';
-        } else {
-            p.style.color = '';
-        }
-    });
-
-    // Actualizar los párrafos dentro de product-lines
-    const productParagraphs = document.querySelectorAll('.product-line p');
-    productParagraphs.forEach(p => {
-        if (theme === 'dark') {
-            // Usar el mismo color que los títulos
-            p.style.color = '#a67c52';
-        } else {
-            // Usar el mismo color que los títulos en modo claro
-            p.style.color = '#a67c52';
-        }
-    });
-}
-
-// El resto del código permanece igual
-function toggleTheme() {
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-    
-    const toggle = document.getElementById('theme-toggle');
-    toggle.addEventListener('change', toggleTheme);
-    
-    document.documentElement.style.transition = 'all 0.3s ease-in-out';
-});
-
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-prefersDarkScheme.addEventListener('change', (e) => {
-    const newTheme = e.matches ? 'dark' : 'light';
-    setTheme(newTheme);
-});
+    <script src="baghira.js"></script>
+</body>
+</html>
