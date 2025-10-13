@@ -128,22 +128,26 @@ function filterProducts(filter, products) {
 
 // Función para inicializar productos
 function initializeProducts() {
-    const products = document.querySelectorAll('.product-card');
+    const whatsappButtons = document.querySelectorAll('.whatsapp-button');
     
-    products.forEach(product => {
-        product.classList.add('visible');
-        product.addEventListener('click', () => {
-            const productName = product.getAttribute('data-name');
-            const price = parseFloat(product.getAttribute('data-price'));
-            contactWhatsApp(productName, price);
+    whatsappButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Obtener el producto padre
+            const productCard = button.closest('.product-card');
+            const productName = productCard.querySelector('h3').textContent;
+            const productPrice = productCard.querySelector('.price').textContent;
+            
+            contactWhatsApp(productName, productPrice);
         });
     });
 }
 
 // Función para contactar por WhatsApp
-function contactWhatsApp(productName, price) {
+function contactWhatsApp(productName, productPrice) {
     const phoneNumber = '5493875877277';
-    const message = `¡Hola! Estoy interesadx en el ${productName} de $${price.toLocaleString()}. ¿Me podrías dar más información?`;
+    const message = `¡Hola! Estoy interesadx en el rascador *${productName}* (${productPrice}). ¿Me podrías dar más información?`;
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
 }
