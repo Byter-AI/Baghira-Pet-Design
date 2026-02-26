@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectá con nosotros 🐾</title>
+    <style>
+        /* ===== Reset y variables globales ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Colores de la identidad visual */
+            --bg-primary: #F5E6D3;
+            --accent-warm: #A67C52;
+            --text-dark: #2C1810;
+            --bg-secondary: #AC928A;
+            
+            /* Variables adicionales para coherencia */
+            --accent-light: #D4A574;
+            --text-light: #5C3A30;
+            --shadow-soft: 0 4px 15px rgba(44, 24, 16, 0.08);
+            --shadow-medium: 0 8px 25px rgba(44, 24, 16, 0.12);
+            
+            /* Tipografía */
+            --font-display: 'Georgia', 'Garamond', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #FFF8F0 100%);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-attachment: fixed;
+        }
+
+        /* ===== Contenedor principal ===== */
+        .container {
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* ===== Sección de contenido superior ===== */
+        .header-section {
+            margin-bottom: 40px;
+            animation: fadeInDown 0.8s ease-out 0.1s both;
+        }
+
+        .title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        /* ===== Decorador visual ===== */
+        .divider {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-warm), transparent);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        /* ===== Sección de botones ===== */
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .social-btn {
+            /* Estructura base */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: var(--font-body);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-decoration: none;
+            box-shadow: var(--shadow-soft);
+            
+            /* Asegurar que los íconos se vean bien */
+            min-height: 52px;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0);
+            transition: background 0.3s ease-out;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .social-btn:active::before {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Contenedor del ícono y texto */
+        .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* ===== Estilos específicos por red social ===== */
+        
+        /* Instagram */
+        .btn-instagram {
+            background: linear-gradient(135deg, #A67C52 0%, #c48d61 100%);
+            color: white;
+        }
+
+        .btn-instagram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(166, 124, 82, 0.25);
+        }
+
+        .btn-instagram:active {
+            transform: translateY(-1px);
+        }
+
+        /* WhatsApp */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #20BA5B 100%);
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.25);
+        }
+
+        .btn-whatsapp:active {
+            transform: translateY(-1px);
+        }
+
+        /* TikTok */
+        .btn-tiktok {
+            background: linear-gradient(135deg, #2C1810 0%, #3a2819 100%);
+            color: white;
+        }
+
+        .btn-tiktok:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(44, 24, 16, 0.25);
+        }
+
+        .btn-tiktok:active {
+            transform: translateY(-1px);
+        }
+
+        /* Facebook */
+        .btn-facebook {
+            background: linear-gradient(135deg, #1877F2 0%, #0A66FF 100%);
+            color: white;
+        }
+
+        .btn-facebook:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(24, 119, 242, 0.25);
+        }
+
+        .btn-facebook:active {
+            transform: translateY(-1px);
+        }
+
+        /* Catálogo / Página principal */
+        .btn-catalog {
+            background: linear-gradient(135deg, var(--accent-warm) 0%, var(--accent-light) 100%);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-catalog:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(166, 124, 82, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-catalog:active {
+            transform: translateY(-1px);
+        }
+
+        /* ===== Footer de la sección ===== */
+        .footer-text {
+            margin-top: 32px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            opacity: 0.7;
+            animation: fadeIn 1.2s ease-out 0.5s both;
+        }
+
+        /* ===== Animaciones ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ===== Media Queries para pantallas más grandes ===== */
+        @media (min-width: 480px) {
+            .title {
+                font-size: 2.3rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .social-btn {
+                padding: 18px 28px;
+                min-height: 56px;
+                font-size: 1.05rem;
+            }
+
+            .buttons-container {
+                gap: 16px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 500px;
+            }
+
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .social-btn:hover {
+                transform: translateY(-4px);
+            }
+
+            .social-btn:active {
+                transform: translateY(-1px);
+            }
+        }
+
+        /* ===== Accesibilidad ===== */
+        @media (prefers-reduced-motion: reduce) {
+            .social-btn,
+            .container,
+            .header-section {
+                animation: none;
+                transition: none;
+            }
+        }
+
+        /* ===== Focus states para navegación con teclado ===== */
+        .social-btn:focus-visible {
+            outline: 3px solid var(--accent-warm);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sección de encabezado -->
+        <div class="header-section">
+            <h1 class="title">Conectá con nosotros 🐾</h1>
+            <p class="subtitle">Descubrí nuestros rascadores y encontrá el favorito de tu gato</p>
+            <div class="divider"></div>
+        </div>
+
+        <!-- Contenedor de botones -->
+        <div class="buttons-container">
+            <!-- Botón: Página principal / Catálogo -->
+            <a href="https://byter-ai.github.io/Baghira-Pet-Design/" class="social-btn btn-catalog" target="_blank" rel="noopener noreferrer" title="Ver catálogo y precios">
+                <div class="btn-content">
+                    <div class="btn-icon">🛍️</div>
+                    <span>Catálogo y Precios</span>
+                </div>
+            </a>
+
+            <!-- Botón: WhatsApp -->
+            <a href="https://wa.me/543875877277?text=Hola!" class="social-btn btn-whatsapp" target="_blank" rel="noopener noreferrer" title="Enviar WhatsApp">
+                <div class="btn-content">
+                    <div class="btn-icon">💬</div>
+                    <span>Escríbenos por WhatsApp</span>
+                </div>
+            </a>
+
+            <!-- Botón: Instagram -->
+            <a href="https://www.instagram.com/baghira13/" class="social-btn btn-instagram" target="_blank" rel="noopener noreferrer" title="Visita nuestro Instagram">
+                <div class="btn-content">
+                    <div class="btn-icon">📸</div>
+                    <span>Instagram</span>
+                </div>
+            </a>
+
+            <!-- Botón: TikTok -->
+            <a href="https://www.tiktok.com/@nandoki1?_r=1&_t=ZS-94FqDlwv84H" class="social-btn btn-tiktok" target="_blank" rel="noopener noreferrer" title="Síguenos en TikTok">
+                <div class="btn-content">
+                    <div class="btn-icon">🎵</div>
+                    <span>TikTok</span>
+                </div>
+            </a>
+
+            <!-- Botón: Facebook -->
+            <a href="https://www.facebook.com/Guaymss" class="social-btn btn-facebook" target="_blank" rel="noopener noreferrer" title="Síguenos en Facebook">
+                <div class="btn-content">
+                    <div class="btn-icon">👍</div>
+                    <span>Facebook</span>
+                </div>
+            </a>
+        </div>
+        <!-- Footer -->
+    </div>
+</body>
+</html>
