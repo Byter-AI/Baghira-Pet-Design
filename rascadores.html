@@ -28,22 +28,22 @@
     <section class="filters">
         <h2>Filtrar por</h2>
         <div class="filter-options">
-            <button class="filter-button active">Todos</button>
-            <button class="filter-button">Línea Hogar</button>
-            <button class="filter-button">Línea Deco</button>
+            <button class="filter-button active" data-filter="todos">Todos</button>
+            <button class="filter-button" data-filter="hogar">Línea Hogar</button>
+            <button class="filter-button" data-filter="deco">Línea Deco</button>
         </div>
     </section>
+
     <section class="products-grid">
         <article class="product-card" data-line="hogar">
             <div class="product-image">
-                <img src="RASCADOR01.png" class="img01">
+                <img src="img/RASCADOR01.png" class="img01" alt="Petit Mimo C - Rascador con casita cilíndrica">
             </div>
             <div class="product-info">
                 <h3>Petit Mimo C</h3>
                 <p class="description">Rascador con casita cilíndrica, 30cm o 35cm de diámetro. Altura de 80cm aproximadamente, ideal para gatos jóvenes.</p>
                 <p class="price">$46,500</p>
-                <a href="#" class="whatsapp-button" 
-                   onclick="contactWhatsApp('Petit mimo', 46500)">
+                <a href="#" class="whatsapp-button">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
                     </svg>
@@ -54,14 +54,13 @@
 
         <article class="product-card" data-line="deco">
             <div class="product-image">
-                <img src="RASCADOR02.png" class="img02">
+                <img src="img/RASCADOR02.png" class="img02" alt="Seth - Rascador con lateral lúdico">
             </div>
             <div class="product-info">
                 <h3>Seth</h3>
                 <p class="description">Rascador con lateral lúdico para gatos, con bobinado completo y base superior para escalar.</p>
                 <p class="price">$25,000</p>
-                <a href="#" class="whatsapp-button" 
-                   onclick="contactWhatsApp('Seth', 25000)">
+                <a href="#" class="whatsapp-button">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
                     </svg>
@@ -70,8 +69,74 @@
             </div>
         </article>
 
+        <article class="product-card" data-line="hogar">
+            <div class="product-image">
+                <img src="img/RASCADOR03.png" class="img03" alt="Nott - Rascador de melamina minimalista">
+            </div>
+            <div class="product-info">
+                <h3>Nott</h3>
+                <p class="description">Rascador de melamina, casita de 35cm³ y una altura de más de 70cm. Color roble americano. Un mueble minimalista con aires rústicos.</p>
+                <p class="price">$109,000</p>
+                <a href="#" class="whatsapp-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    </svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+        </article>
+
+        <article class="product-card" data-line="hogar">
+            <div class="product-image">
+                <img src="img/RASCADOR04.png" class="img04" alt="Morfeo - Rascador con cama colgante">
+            </div>
+            <div class="product-info">
+                <h3>Morfeo</h3>
+                <p class="description">Este es un modelo que conjuga las dos cosas que más le gusta hacer a un gato. Arañar y dormir. Tiene dos columnas rascadores y una camita colgante entre ellas. Altura aprox 50cm.</p>
+                <p class="price">$45,000</p>
+                <a href="#" class="whatsapp-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    </svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+        </article>
+
+        <article class="product-card" data-line="deco">
+            <div class="product-image">
+                <img src="img/RASCADOR05.png" class="img05" alt="Jeremy - Rascador macizo de madera">
+            </div>
+            <div class="product-info">
+                <h3>Jeremy</h3>
+                <p class="description">Es un rascador macizo de madera, más resistente y con bobinado de sizal completo. Ideal para gatos muy activos y fuertes.</p>
+                <p class="price">$25,000</p>
+                <a href="#" class="whatsapp-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    </svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+        </article>
+
+        <article class="product-card" data-line="deco">
+            <div class="product-image">
+                <img src="img/RASCADOR06.png" class="img06" alt="Simple - Rascador para gatos pequeños">
+            </div>
+            <div class="product-info">
+                <h3>Simple</h3>
+                <p class="description">Es un producto ideal para gatos pequeños e iniciados.</p>
+                <p class="price">$20,000</p>
+                <a href="#" class="whatsapp-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    </svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+        </article>
     </section>
- 
 
     <footer>
         <div class="footer-content">
